@@ -65,6 +65,8 @@ class Method(object):
             output_shape = str(data.shape).center(out_width)
             # Make a formatted string containing all of this information
             method_str = "|".join([method_name,input_shape,output_shape])
+            if input_shape != output_shape:
+                method_str = '\033[1m' + method_str + '\033[0m'
             # Print to console
             print(method_str)
             # Retrieve a data sample.
